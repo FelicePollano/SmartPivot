@@ -26,7 +26,7 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    height:500
+    
   },
 });
 
@@ -52,7 +52,7 @@ class TabsWrappedLabel extends React.Component {
             <Tab value="three" label="Item Three" />
           </Tabs>
         </AppBar>
-        {value === 'one' && <TabContainer><PivotGrid style={{height:500}} dataSource={dataSource}></PivotGrid></TabContainer>}
+        {value === 'one' && <TabContainer><PivotGrid width="100%" height="350px"  dataSource={dataSource}></PivotGrid></TabContainer>}
         {value === 'two' && <TabContainer>Item Two</TabContainer>}
         {value === 'three' && <TabContainer>Item Three</TabContainer>}
       </div>

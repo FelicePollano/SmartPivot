@@ -2,25 +2,51 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles';
 
 var styles={
-    pivotGridContainer:{
-        backgroundColor:"blue",
+    gridContainer:{
+        backgroundColor:"CornSilk",
+        position:"relative"
         
-        minHeight:300
+    },
+    hscrollBarContainer:{
+        backgroundColor:"Gray",
+        position:"absolute",
+        bottom:0,
+        width:"100%",
+        height:"16px"
+    },
+    vscrollBarContainer:{
+        backgroundColor:"Gray",
+        position:"absolute",
+        right:0,
+        width:"16px",
+        height:"100%"
     }
 }
 
 class PivotGrid extends React.Component{
     constructor(props){
         super(props);
-        this.state = {firstVisibleCol:0,firstVisibleRow:0};
+        this.state = {
+            firstVisibleCol:0,
+            firstVisibleRow:0,
+            componentSize:{height:props.height,width:props.width}
+        };
     }
     render(){
+        var sizeStyle = { 
+            height:this.state.componentSize.height,
+            width:this.state.componentSize.width
+        }
         return (
-        <div className={this.props.classes.pivotGridContainer}>
+        <div style={sizeStyle} className={this.props.classes.gridContainer}>
         <div>
-        <h2>The component</h2>
+        <div className={this.props.classes.vscrollBarContainer}>
         </div>
-        <div className="this.props.classes.pivotGridContainer"></div>
+        <h2>The component {this.props.height}</h2>
+        </div>
+       
+        <div className={this.props.classes.hscrollBarContainer}>
+        </div>
         </div>
         );
     }
