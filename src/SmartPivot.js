@@ -1,6 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles';
-
+import Body from "./body";
 var styles={
     gridContainer:{
         backgroundColor:"CornSilk",
@@ -32,6 +32,7 @@ class PivotGrid extends React.Component{
             componentSize:{height:props.height,width:props.width}
         };
     }
+    
     render(){
         var sizeStyle = { 
             height:this.state.componentSize.height,
@@ -42,7 +43,7 @@ class PivotGrid extends React.Component{
         <div>
         <div className={this.props.classes.vscrollBarContainer}>
         </div>
-        <h2>The component {this.props.height}</h2>
+        <Body/>
         </div>
        
         <div className={this.props.classes.hscrollBarContainer}>
